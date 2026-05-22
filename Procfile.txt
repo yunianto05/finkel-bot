@@ -1,0 +1,1 @@
+worker: python finkel_bot.py
