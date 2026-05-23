@@ -267,7 +267,7 @@ def build_report(period: str = "bulanan", name: str = "Keluarga") -> str:
     lines += [
         "",
         SEPARATOR,
-        f"🤖 _FinKel Bot · Otomatis dicatat_",
+        f"🤖 _ZaQi Bot · Otomatis dicatat_",
         f"⏱ {datetime.now().strftime('%H:%M')} WIB",
     ]
 
