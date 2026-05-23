@@ -14,6 +14,7 @@ Cara pakai:
 import logging
 import json
 import re
+import os
 from datetime import datetime, date, timedelta
 from collections import defaultdict
 from typing import Optional
@@ -30,7 +31,7 @@ from telegram.constants import ParseMode
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 
-BOT_TOKEN = "ISI_TOKEN_BOT_KAMU_DISINI"          # dari @BotFather
+BOT_TOKEN = "8817660681:AAH_nTAHWw5VU0qM8Dn1R_uHrEVt0rDJQ00"          # dari @BotFather
 CHAT_ID_ALLOWED: list[int] = []                   # kosongkan = semua boleh, isi = whitelist
 
 # Google Sheets (opsional — isi jika ingin auto-sync)
