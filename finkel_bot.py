@@ -497,25 +497,28 @@ async def handle_message(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 # ─── Entry point ──────────────────────────────────────────────────────────────
 
 def main():
-    if BOT_TOKEN == "ISI_TOKEN_BOT_KAMU_DISINI":
-        print("⚠️  Harap isi BOT_TOKEN terlebih dahulu di bagian Config!")
+    if not BOT_TOKEN:
+        logger.error("⚠️  Harap isi BOT_TOKEN terlebih dahulu di bagian Config!")
         return
 
-    app = Application.builder().token(BOT_TOKEN).build()
+    from telegram.ext import Updater
+    updater = Updater(BOT_TOKEN)
+    dp = updater.dispatcher
 
-    app.add_handler(CommandHandler("start",    cmd_start))
-    app.add_handler(CommandHandler("bantuan",  cmd_bantuan))
-    app.add_handler(CommandHandler("laporan",  cmd_laporan))
-    app.add_handler(CommandHandler("harian",   cmd_harian))
-    app.add_handler(CommandHandler("mingguan", cmd_mingguan))
-    app.add_handler(CommandHandler("bulanan",  cmd_bulanan))
-    app.add_handler(CommandHandler("riwayat",  cmd_riwayat))
-    app.add_handler(CommandHandler("export",   cmd_export))
-    app.add_handler(CommandHandler("reset",    cmd_reset))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+    dp.add_handler(CommandHandler("start",    cmd_start))
+    dp.add_handler(CommandHandler("bantuan",  cmd_bantuan))
+    dp.add_handler(CommandHandler("laporan",  cmd_laporan))
+    dp.add_handler(CommandHandler("harian",   cmd_harian))
+    dp.add_handler(CommandHandler("mingguan", cmd_mingguan))
+    dp.add_handler(CommandHandler("bulanan",  cmd_bulanan))
+    dp.add_handler(CommandHandler("riwayat",  cmd_riwayat))
+    dp.add_handler(CommandHandler("export",   cmd_export))
+    dp.add_handler(CommandHandler("reset",    cmd_reset))
+    dp.add_handler(MessageHandler(filters.Filters.text & ~filters.Filters.command, handle_message))
 
     logger.info("🤖 FinKel Bot berjalan...")
-    app.run_polling(allowed_updates=Update.ALL_TYPES)
+    updater.start_polling()
+    updater.idle()
 
 
 if __name__ == "__main__":
