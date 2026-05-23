@@ -31,7 +31,7 @@ from telegram.constants import ParseMode
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 
-BOT_TOKEN = "8817660681:AAH_nTAHWw5VU0qM8Dn1R_uHrEVt0rDJQ00"          # dari @BotFather
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 CHAT_ID_ALLOWED: list[int] = []                   # kosongkan = semua boleh, isi = whitelist
 
 # Google Sheets (opsional — isi jika ingin auto-sync)
