@@ -344,7 +344,7 @@ async def cmd_start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     if not is_allowed(update):
         return
     text = (
-        "👋 *Halo! Selamat datang di FinKel Bot!*\n"
+        "👋 *Halo! Selamat datang di ZaQi Bot!*\n"
         f"{SEPARATOR}\n"
         "Saya siap membantu mencatat keuangan keluarga kamu.\n\n"
         "Cukup ketik transaksi dengan bahasa bebas:\n"
