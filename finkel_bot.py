@@ -60,7 +60,7 @@ CATEGORY_EMOJI = {
     "Transportasi": "⛽",
     "Tagihan":      "⚡",
     "Hiburan":      "🎬",
-    "Tabungan":     "🐷",
+    "Tabungan":     "💳",
     "Pendapatan":   "💰",
     "Lainnya":      "📦",
 }
@@ -385,7 +385,7 @@ async def cmd_bantuan(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         f"{SEPARATOR}\n"
         "*Kategori otomatis:*\n"
         "🍔 Makanan · ⛽ Transportasi · ⚡ Tagihan\n"
-        "🎬 Hiburan · 🐷 Tabungan · 💰 Pendapatan\n"
+        "🎬 Hiburan · 💳 Tabungan · 💰 Pendapatan\n"
         "📦 Lainnya"
     )
     await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
