@@ -1,5 +1,5 @@
 """
-FinKel Bot — Asisten Keuangan Keluarga via Telegram
+ZaQi Bot — Asisten Keuangan Keluarga via Telegram
 =====================================================
 Dependensi:
     pip install python-telegram-bot==20.7 gspread google-auth
@@ -369,7 +369,7 @@ async def cmd_bantuan(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     if not is_allowed(update):
         return
     text = (
-        "❓ *Panduan FinKel Bot*\n"
+        "❓ *Panduan ZaQi Bot*\n"
         f"{SEPARATOR}\n"
         "📝 *Format input transaksi:*\n"
         "`[deskripsi] [nominal]`\n\n"
@@ -514,7 +514,7 @@ def main():
     app.add_handler(CommandHandler("reset",    cmd_reset))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    logger.info("🤖 FinKel Bot berjalan...")
+    logger.info("🤖 ZaQi Bot berjalan...")
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 
